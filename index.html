@@ -7,7 +7,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
-		<link rel="shortcut icon" href="https://cdn.vuetifyjs.com/images/logos/favicon.ico" />
+		<link rel="shortcut icon" href="./assets/love-loader.svg" />
 		<link
 			type="text/css"
 			rel="stylesheet"
@@ -73,10 +73,11 @@
 				<v-content>
 					<section id="hero">
 						<v-row no-gutters>
+							<v-col cols='12' >
 							<v-img
-								height="70"
-								:min-height="'calc(140vh - ' + $vuetify.application.top + 'px)'"
-								src="./assets/main.jpg"
+							:min-height="'calc(80vh - ' + $vuetify.application.top + 'px)'"
+								width="100%"
+								src="./assets/main3.jpeg"
 							>
 								<v-theme-provider dark>
 									<v-container fill-height>
@@ -104,7 +105,7 @@
 													"
 												></span>
 												<div>
-													<span style="color: #de037f">W</span>
+													<span style="font-size: 34px; color: #de037f">W</span>
 													<span> EDDING </span>
 
 													<br />
@@ -128,13 +129,14 @@
 									</v-container>
 								</v-theme-provider>
 							</v-img>
+						</v-col>
 						</v-row>
 					</section>
 					<section id="about-me">
 						<div class="py-12"></div>
 
 						<v-container class="text-center">
-							<h2 class="display-2 font-weight-bold mb-3">INVITATION</h2>
+							<h2 class="display-2 font-weight-bold mb-3" style="color:chocolate">INVITATION</h2>
 
 							<v-responsive class="mx-auto mb-8" width="56">
 								<v-divider class="mb-1"></v-divider>
@@ -188,7 +190,7 @@
 						<div class="py-12"></div>
 
 						<v-container>
-							<h2 class="font-weight-bold mb-3 text-uppercase text-center" style="font-size:40px; font-family: 'Dancing Script', cursive;"><span style="color: #de037f">Our </span>Memories </h2>
+							<h2 class="font-weight-bold mb-3 text-uppercase text-center" style="font-size:40px; font-family: 'Dancing Script', cursive;"><span style="color: #de037f">Our </span>moments </h2>
 
 							<v-responsive class="mx-auto mb-12" width="56">
 								<v-divider class="mb-1"></v-divider>
@@ -197,8 +199,8 @@
 							</v-responsive>
 
 							<v-row no-gutters>
-								<v-col v-for="({ src, text, title }, i) in memories" :key="i" cols="12" md="4">
-									<v-img :src="src"  height="400" max-width="100%"></v-img>
+								<v-col v-for="({ src, text, title }, i) in moments" :key="i" cols="12" md="4">
+									<v-img :src="src"  height="450" max-width="100%"></v-img>
 
 								</v-col>
 							</v-row>
@@ -206,8 +208,74 @@
 
 						<div class="py-12"></div>
 					</section>
+					<section id="blog">
+						<div class="py-12"></div>
 
-					<v-sheet id="contact" color="#333333" dark tag="section" tile>
+						<v-container>
+							<h2 class="font-weight-bold mb-3 text-uppercase text-center" style="font-size:40px; font-family: 'Dancing Script', cursive;">
+								Our<span style="color: #de037f"> Family </span> </h2>
+
+							<v-responsive class="mx-auto mb-12" width="56">
+								<v-divider class="mb-1"></v-divider>
+
+								<v-divider></v-divider>
+							</v-responsive>
+
+							<v-row >
+								<v-col  cols="12" md="5" >
+									<v-card class="elevation-4" shaped >
+										<v-img 
+										src="./assets/f_7.jpeg"  
+										height="400" 
+										
+										max-width="100%"
+										></v-img>
+									</v-card>
+								</v-col>
+								<v-col  cols="12" md="5" offset-md="2">
+									<v-card class="elevation-4" shaped >
+										<v-img 
+										src="./assets/f_4.jpeg"  
+										height="400" 
+										max-width="100%"
+										></v-img>
+									</v-card>
+								</v-col>
+								<v-col  cols="12" >
+									<v-card class="elevation-18"  rounded >
+										<v-img 
+										src="./assets/family_all.jpeg"  
+										height="400" 
+										max-width="100%"
+										></v-img>
+									</v-card>
+								</v-col>
+								<v-col  cols="5">
+									<v-card class="elevation-4" shaped >
+										<v-img 
+										src="./assets/f_8.jpeg"  
+										height="400" 
+										
+										max-width="100%"
+										></v-img>
+									</v-card>
+								</v-col>
+								<v-col  cols="12" md="5" offset-md="2">
+									<v-card class="elevation-4" shaped >
+										<v-img 
+										src="./assets/f_2.jpeg"  
+										height="400" 
+										max-width="100%"
+										></v-img>
+									</v-card>
+								</v-col>
+							</v-row>
+						</v-container>
+
+						<div class="py-12"></div>
+					</section>
+
+					<!-- <v-sheet id="contact" color="#333333" dark tag="section" tile>
 						<div class="py-12"></div>
 
 						<v-container>
@@ -245,7 +313,7 @@
 						</v-container>
 
 						<div class="py-12"></div>
-					</v-sheet>
+					</v-sheet> -->
 				</v-content>
 
 				<v-footer class="justify-center" color="#292929" height="100">
@@ -263,9 +331,27 @@
 				vuetify: new Vuetify(),
 				data() {
 					return {
-						memories: [
+						moments: [
+						    {
+								src:'./assets/1st.jpeg',
+							},
 							{
-                src:'./assets/3rd.jpeg',
+								src:'./assets/old_3.jpeg',
+							},
+							{
+								src:'./assets/old_2.jpeg',
+							},
+              				{
+               					 src:'./assets//6th.jpeg',
+							},
+							{
+								src:'./assets/10th.jpeg',
+							},
+							{
+								src:'./assets/11th.jpeg',
+							},			
+							{
+                				src:'./assets/3rd.jpeg',
 							},
 							{
 								src:'./assets/4th.jpeg',
@@ -273,8 +359,20 @@
 							{
 								src:'./assets//5th.jpeg',
 							},
-              {
-                src:'./assets//6th.jpeg',
+             
+						],
+						family: [
+							{
+                				src:'./assets/3rd.jpeg',
+							},
+							{
+								src:'./assets/4th.jpeg',
+							},
+							{
+								src:'./assets//5th.jpeg',
+							},
+              				{
+               					 src:'./assets//6th.jpeg',
 							},
 							{
 								src:'./assets/7th.jpeg',
