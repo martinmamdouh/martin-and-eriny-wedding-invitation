@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Martin & Eriny Wedding invitation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="https://cdn.vuetifyjs.com/images/logos/favicon.ico" />
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700"
+		/>
+	</head>
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date('Jan 14, 2021 20:00:00').getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function () {
+			// Get today's date and time
+			var now = new Date().getTime();
+
+			// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Output the result in an element with id="demo"
+			document.getElementById('demo').innerHTML =
+				days +
+				'<span style="font-size:45px; color:white;"> Days   </span>' +
+				hours +
+				'<span style="font-size:45px; color:white;"> Hours   </span> ' +
+				minutes +
+				'<span style="font-size:45px; color:white;"> Minutes   </span> ' +
+				seconds +
+				'<span style="font-size:45px; color:white;"> Seconds   </span> ';
+
+			// If the count down is over, write some text
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById('demo').innerHTML = 'EXPIRED';
+			}
+		}, 1000);
+	</script>
+
+	<body>
+		<div id="app">
+			<v-app>
+				<v-app-bar app color="white" height="60">
+					<v-avatar class="mr-3" color="grey lighten-5" size="60">
+						<v-img
+							contain
+							max-height="70%"
+							src="http://demo.regediter.com/arlin-landing/arlin/img/loader.svg"
+						></v-img>
+					</v-avatar>
+
+					<v-toolbar-title>
+						<div style="font-family: 'Dancing Script', cursive; line-height: 1em">
+							<span style="color: #de037f">Martin</span> & <span style="color: #de037f">Eriny</span> Wedding invitation on  <span style="color: #de037f">14. jan.2021</span></span
+						></div>
+					</v-toolbar-title>
+				</v-app-bar>
+
+				<v-content>
+					<section id="hero">
+						<v-row no-gutters>
+							<v-img
+								height="70"
+								:min-height="'calc(140vh - ' + $vuetify.application.top + 'px)'"
+								src="https://scontent.fcai20-1.fna.fbcdn.net/v/t1.0-9/121045786_418495922468866_3424865490334292230_n.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=IEyEAVcD_kgAX_idhc2&_nc_ht=scontent.fcai20-1.fna&oh=51e438876d482f73efa633d66f6c6628&oe=5FCCA220"
+							>
+								<v-theme-provider dark>
+									<v-container fill-height>
+										<v-row class="white--text mx-auto" justify="center">
+											<v-col
+												class="text-center"
+												style="font-family: 'Dancing Script', cursive; line-height: 1em"
+												cols="12"
+												tag="h1"
+											>
+												<span
+													style="
+														background: url(http://demo.regediter.com/arlin-landing/arlin/img/hearth_center.svg);
+														background-repeat: no-repeat;
+														background-position: center;
+														background-color: transparent;
+														background-size: contain;
+														margin: 0 auto;
+														opacity: 0.3;
+														width: 100%;
+														height: 300px;
+														position: absolute;
+														left: 0;
+														top: 35%;
+													"
+												></span>
+												<div>
+													<span style="color: #de037f">W</span>
+													<span> EDDING </span>
+
+													<br />
+													<br />
+
+													<h2 class="font-weight-light">Martin & Eriny</h2>
+													<br />
+													<p class="font-weight-black">14. Jan.2021</p>
+												</div>
+											</v-col>
+
+											<v-btn
+												class="align-self-end"
+												fab
+												outlined
+												@click="$vuetify.goTo('#about-me')"
+											>
+												<v-icon>mdi-chevron-double-down</v-icon>
+											</v-btn>
+										</v-row>
+									</v-container>
+								</v-theme-provider>
+							</v-img>
+						</v-row>
+					</section>
+					<section id="about-me">
+						<div class="py-12"></div>
+
+						<v-container class="text-center">
+							<h2 class="display-2 font-weight-bold mb-3">INVITATION</h2>
+
+							<v-responsive class="mx-auto mb-8" width="56">
+								<v-divider class="mb-1"></v-divider>
+
+								<v-divider></v-divider>
+							</v-responsive>
+
+							<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
+								<div>We invite you to share the joy with us as the wedding of</div>
+								<div><b>Mr. Martin Mamdouh</b> & <b>Mrs. Eriny Usama</b></div>
+								<div>takes place on <b>14-1-2021</b>,</div>
+								<div>at <b>Archangel Michael church in Sheraton</b>,</div>
+								We expect you together with your family! We expect your blessing more than anything on
+								our wedding day. Let us all enjoy the holy occasion with your sweet presence. The joy of
+								this wedding is incomplete without your presence in it. You have shared in our lives
+								with your friendship. Let’s share the joy together.
+							</v-responsive>
+
+							<v-img
+								src="file:///Users/martin/Desktop/martinAndErinyInvitation.png"
+								hieght="500"
+								width="500"
+								class="mx-auto"
+							></v-img>
+						</v-container>
+
+						<div class="py-12"></div>
+					</section>
+
+
+					<section id="stats">
+						<v-parallax
+							:height="$vuetify.breakpoint.smAndDown ? 900 : 600"
+							src="file:///Users/martin/Downloads/meAndrina2.jpeg"
+						>
+							<v-container fill-height>
+								<v-row class="mx-auto">
+									<v-col cols="12">
+										<div class="text-center">
+											<div class="display-3 font-weight-black mb-4">
+												<span id="demo" style="color: #de037f; opacity: 0.8;"></span>
+											</div>
+										</div>
+									</v-col>
+								</v-row>
+							</v-container>
+						</v-parallax>
+					</section>
+
+					<section id="blog">
+						<div class="py-12"></div>
+
+						<v-container>
+							<h2 class="font-weight-bold mb-3 text-uppercase text-center" style="font-size:40px; font-family: 'Dancing Script', cursive;"><span style="color: #de037f">Our </span>Memories </h2>
+
+							<v-responsive class="mx-auto mb-12" width="56">
+								<v-divider class="mb-1"></v-divider>
+
+								<v-divider></v-divider>
+							</v-responsive>
+
+							<v-row no-gutters>
+								<v-col v-for="({ src, text, title }, i) in memories" :key="i" cols="12" md="4">
+									<v-img :src="src"  height="400" max-width="100%"></v-img>
+
+								</v-col>
+							</v-row>
+						</v-container>
+
+						<div class="py-12"></div>
+					</section>
+
+					<v-sheet id="contact" color="#333333" dark tag="section" tile>
+						<div class="py-12"></div>
+
+						<v-container>
+							<h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Write to Us</h2>
+
+							<v-responsive class="mx-auto mb-12" width="56">
+								<v-divider class="mb-1"></v-divider>
+
+								<v-divider></v-divider>
+							</v-responsive>
+
+							<v-theme-provider light>
+								<v-row >
+									<v-col cols="12">
+										<v-text-field flat label="Name*" solo></v-text-field>
+									</v-col>
+
+									<v-col cols="12">
+										<v-text-field flat label="Email*" solo></v-text-field>
+									</v-col>
+
+									<v-col cols="12">
+										<v-text-field flat label="Subject*" solo></v-text-field>
+									</v-col>
+
+									<v-col cols="12">
+										<v-textarea flat label="Message*" solo></v-textarea>
+									</v-col>
+
+									<v-col class="mx-auto" cols="auto">
+										<v-btn color="accent" x-large> Submit </v-btn>
+									</v-col>
+								</v-row>
+							</v-theme-provider>
+						</v-container>
+
+						<div class="py-12"></div>
+					</v-sheet>
+				</v-content>
+
+				<v-footer class="justify-center" color="#292929" height="100">
+					<div class="title font-weight-light grey--text text--lighten-1 text-center">
+						&copy; 14-1-2021 —  Made with 💜 by Martin Mamdouh
+					</div>
+				</v-footer>
+			</v-app>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+		<script>
+			new Vue({
+				el: '#app',
+				vuetify: new Vuetify(),
+				data() {
+					return {
+						memories: [
+							{
+                src:'file:///Users/martin/Downloads/3rd.jpeg',
+							},
+							{
+								src:'file:///Users/martin/Downloads/4th.jpeg',
+							},
+							{
+								src:'file:///Users/martin/Downloads/5th.jpeg',
+							},
+              {
+                src:'file:///Users/martin/Downloads/6th.jpeg',
+							},
+							{
+								src:'file:///Users/martin/Downloads/7th.jpeg',
+							},
+							{
+								src:'file:///Users/martin/Downloads/2nd.jpeg',
+							},
+             
+						],
+					};
+				},
+			});
+		</script>
+	</body>
+</html>
