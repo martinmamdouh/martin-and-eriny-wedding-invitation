@@ -7,6 +7,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
 		<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 		<link rel="shortcut icon" href="./assets/love-loader.svg" />
 		<link
 			type="text/css"
@@ -34,14 +35,23 @@
 
 			// Output the result in an element with id="demo"
 			document.getElementById('demo').innerHTML =
+			
+			'<div class="row dense "> <div class="col col-12 col-md-3">' +
 				days +
 				'<span style="font-size:45px; color:white;"> Days   </span>' +
+				'</div>'+
+				'<div class="col col-12 col-md-3">' +
 				hours +
 				'<span style="font-size:45px; color:white;"> Hours   </span> ' +
+				'</div>'+
+				'<div class="col col-12 col-md-3">' +
 				minutes +
 				'<span style="font-size:45px; color:white;"> Minutes   </span> ' +
+				'</div>'+
+				'<div class="col col-12 col-md-3">' +
 				seconds +
-				'<span style="font-size:45px; color:white;"> Seconds   </span> ';
+				'<span style="font-size:45px; color:white;"> Seconds   </span> '+
+				'</div></div>';
 
 			// If the count down is over, write some text
 			if (distance < 0) {
@@ -159,8 +169,16 @@
 								src="./assets/martinAndErinyInvitation.png"
 								hieght="500"
 								width="500"
-								class="mx-auto"
+								class="mx-auto elevation-24"
 							></v-img>
+							<div class="mt-12">
+								Church location on Google Map 
+								<v-btn icon @click="open">
+
+									<v-icon color="red" >fa fa-map-marker</v-icon>
+								</v-btn>
+
+							</div>
 						</v-container>
 
 						<div class="py-12"></div>
@@ -177,7 +195,7 @@
 									<v-col cols="12">
 										<div class="text-center">
 											<div class="display-3 font-weight-black mb-4">
-												<span id="demo" style="color: #de037f; opacity: 0.8;"></span>
+												<section id="demo" style="color: #de037f; opacity: 0.7;"></section>
 											</div>
 										</div>
 									</v-col>
@@ -199,8 +217,8 @@
 							</v-responsive>
 
 							<v-row no-gutters>
-								<v-col v-for="({ src, text, title }, i) in moments" :key="i" cols="12" md="4">
-									<v-img :src="src"  height="450" max-width="100%"></v-img>
+								<v-col v-for="(src, i) in moments" :key="i" cols="12" md="4">
+									<v-img :src="src"  height="450" max-width="100%" :class="{'elevation-24': i% 2 == 0}"></v-img>
 
 								</v-col>
 							</v-row>
@@ -208,7 +226,7 @@
 
 						<div class="py-12"></div>
 					</section>
-					<section id="blog">
+					<section id="blog2">
 						<div class="py-12"></div>
 
 						<v-container>
@@ -384,6 +402,7 @@
 						],
 					};
 				},
+				methods:{open(){window.open("https://goo.gl/maps/hxxXjYZXDEoTgViJ8","_blank")}}
 			});
 		</script>
 	</body>
