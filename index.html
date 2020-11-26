@@ -78,6 +78,13 @@
 							<span style="color: #de037f">Martin</span> & <span style="color: #de037f">Eriny</span> Wedding invitation on  <span style="color: #de037f">14. jan.2021</span></span
 						></div>
 					</v-toolbar-title>
+					<v-spacer></v-spacer>
+					<span mr-12 style="font-family: 'Dancing Script';"> 
+						
+						<v-btn icon  @click="open">
+							<v-icon color="red">fas fa-map-marker-alt</v-icon>	
+						</v-btn>
+					</span>
 				</v-app-bar>
 
 				<v-content>
@@ -156,9 +163,20 @@
 
 							<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
 								<div>We invite you to share the joy with us as the wedding of</div>
-								<div><b>Mr. Martin Mamdouh</b> & <b>Mrs. Eriny Usama</b></div>
-								<div>takes place on <b>14-1-2021</b>,</div>
-								<div>at <b>Archangel Michael church in Sheraton</b>,</div>
+								<div>
+									<b style="font-family: 'Dancing Script', cursive; line-height: 1em">Mr. Martin Mamdouh</b>
+									
+									<br/> <span  style="font-family: 'Dancing Script', cursive; color: chocolate">
+										&
+									</span>
+									<br/>  <b style="font-family: 'Dancing Script', cursive; line-height: 1em">Mrs. Eriny Usama</b></div>
+								<div>takes place on <br/> <b style="font-family: 'Dancing Script', cursive; font-weight: bold; color:chocolate;">14-1-2021</b>,</div>
+								<div>
+									at <b>Archangel Michael church in Sheraton</b>
+									<v-btn icon class="mt-n3" @click="open">
+										<v-icon color="red">fas fa-map-marker-alt</v-icon>
+									</v-btn>,
+								</div>
 								We expect you together with your family! We expect your blessing more than anything on
 								our wedding day. Let us all enjoy the holy occasion with your sweet presence. The joy of
 								this wedding is incomplete without your presence in it. You have shared in our lives
@@ -172,13 +190,6 @@
 								class="mx-auto elevation-24"
 							></v-img>
 							<div class="mt-12">
-								Church location on Google Maps
-								<v-btn icon @click="open">
-
-									<v-icon color="red" >fa fa-map-marker</v-icon>
-								</v-btn>
-
-							</div>
 						</v-container>
 
 						<div class="py-12"></div>
@@ -187,8 +198,8 @@
 
 					<section id="stats">
 						<v-parallax
-							:height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-							src="./assets/meAndrina2.jpeg"
+							:height="$vuetify.breakpoint.smAndDown ? 900 : 510"
+							src="./assets/meAndrina3.jpeg"
 						>
 							<v-container fill-height>
 								<v-row class="mx-auto">
@@ -217,18 +228,16 @@
 							</v-responsive>
 
 							<v-row no-gutters>
-								<v-col v-for="(src, i) in moments" :key="i" cols="12" md="4">
-									<v-img :src="src"  height="450" max-width="100%" :class="{'elevation-24': i% 2 == 0}"></v-img>
-
+								<v-col v-for="(src, i) in moments" :key="i" cols="4" md="4">
+									<v-img :src="src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 100:400" :class="{'elevation-24': i% 2 == 0}"></v-img>
 								</v-col>
 							</v-row>
 						</v-container>
-
 						<div class="py-12"></div>
 					</section>
 					<section id="blog2">
 						<div class="py-12"></div>
-
 						<v-container>
 							<h2 class="font-weight-bold mb-3 text-uppercase text-center" style="font-size:40px; font-family: 'Dancing Script', cursive;">
 								Our<span style="color: #de037f"> Family </span> </h2>
@@ -240,23 +249,22 @@
 							</v-responsive>
 
 							<v-row >
-								<v-col  cols="12" md="5" >
+								<v-col  cols="6" md="5" >
 									<v-card class="elevation-4" shaped >
 										<v-img 
 										src="./assets/f_7.jpeg"  
-										height="400" 
+										height="auto" 
 										width="100%"
-										
-										
 										></v-img>
 									</v-card>
 								</v-col>
-								<v-col  cols="12" md="5" offset-md="2">
+								<v-col  cols="6" md="5" offset-md="2">
 									<v-card class="elevation-4" shaped >
 										<v-img 
 										src="./assets/f_4.jpeg"  
-										height="400" 
+										height="auto" 
 										width="100%"
+										min-height="140"
 										
 										></v-img>
 									</v-card>
@@ -265,28 +273,28 @@
 									<v-card class="elevation-18"  rounded >
 										<v-img 
 										src="./assets/family_all.jpeg"  
-										height="400" 
+										height="auto" 
 										width="100%"
 										
 										></v-img>
 									</v-card>
 								</v-col>
-								<v-col  cols="12" md="5">
+								<v-col  cols="6" md="5">
 									<v-card class="elevation-4" shaped >
 										<v-img 
 										src="./assets/f_8.jpeg"  
-										height="400" 
+										height="auto" 
 										width="100%"
 										
 										
 										></v-img>
 									</v-card>
 								</v-col>
-								<v-col  cols="12" md="5" offset-md="2">
+								<v-col  cols="6" md="5" offset-md="2">
 									<v-card class="elevation-4" shaped >
 										<v-img 
 										src="./assets/f_2.jpeg"  
-										height="400" 
+										height="auto" 
 										width="100%"
 										
 										></v-img>
@@ -297,46 +305,6 @@
 
 						<div class="py-12"></div>
 					</section>
-
-					<!-- <v-sheet id="contact" color="#333333" dark tag="section" tile>
-						<div class="py-12"></div>
-
-						<v-container>
-							<h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Write to Us</h2>
-
-							<v-responsive class="mx-auto mb-12" width="56">
-								<v-divider class="mb-1"></v-divider>
-
-								<v-divider></v-divider>
-							</v-responsive>
-
-							<v-theme-provider light>
-								<v-row >
-									<v-col cols="12">
-										<v-text-field flat label="Name*" solo></v-text-field>
-									</v-col>
-
-									<v-col cols="12">
-										<v-text-field flat label="Email*" solo></v-text-field>
-									</v-col>
-
-									<v-col cols="12">
-										<v-text-field flat label="Subject*" solo></v-text-field>
-									</v-col>
-
-									<v-col cols="12">
-										<v-textarea flat label="Message*" solo></v-textarea>
-									</v-col>
-
-									<v-col class="mx-auto" cols="auto">
-										<v-btn color="accent" x-large> Submit </v-btn>
-									</v-col>
-								</v-row>
-							</v-theme-provider>
-						</v-container>
-
-						<div class="py-12"></div>
-					</v-sheet> -->
 				</v-content>
 
 				<v-footer class="justify-center" color="#292929" height="100">
