@@ -72,7 +72,6 @@
 							src="./assets/love-loader.svg"
 						></v-img>
 					</v-avatar>
-
 					<v-toolbar-title>
 						<div style="font-family: 'Dancing Script', cursive; line-height: 1em">
 							<span style="color: #de037f">Martin</span> & <span style="color: #de037f">Eriny</span> Wedding invitation on  <span style="color: #de037f">14. jan.2021</span></span
@@ -88,18 +87,20 @@
 				</v-app-bar>
 
 				<v-content>
-					<section id="hero">
+					<section id="hero" >
 						<v-row no-gutters>
 							<v-col cols='12' >
 							<v-img
 							:min-height="'calc(80vh - ' + $vuetify.application.top + 'px)'"
-								width="100%"
-								src="./assets/main3.jpeg"
+								width="auto"
+								height="85vh"
+								src="./assets/main_5.jpg"
 							>
-								<v-theme-provider dark>
-									<v-container fill-height>
-										<v-row class="white--text mx-auto" justify="center">
+								<v-theme-provider v-if="!$vuetify.breakpoint.smAndDown" dark  >
+									<v-container fill-height style="position: absolute;top:0%;left:0%">
+										<v-row class="white--text mx-auto">
 											<v-col
+											
 												class="text-center"
 												style="font-family: 'Dancing Script', cursive; line-height: 1em"
 												cols="12"
@@ -113,31 +114,27 @@
 														background-color: transparent;
 														background-size: contain;
 														margin: 0 auto;
-														opacity: 0.3;
+														opacity: 0.9;
 														width: 100%;
 														height: 300px;
 														position: absolute;
-														left: 0;
-														top: 35%;
+														left: 0%;
+														top: 40%;
 													"
 												></span>
-												<div>
-													<span style="font-size: 34px; color: #de037f">W</span>
-													<span> EDDING </span>
-
-													<br />
-													<br />
-
-													<h2 class="font-weight-light">Martin & Eriny</h2>
-													<br />
-													<p class="font-weight-black">14. Jan.2021</p>
-												</div>
+												<v-responsive 	style="font-size: 28px;margin-top: 230px;" >
+													
+													<div  style="color:rgba(130, 167, 182, 0.932);font-size: 1.5rem;">Martin & Eriny</div>
+													<div class="my-6" style="color:#de037f86;font-size: 1.2rem;"> WEDDING CERMONY</h5>
+													<div  style="color:rgba(130, 167, 182, 0.932); padding-top:30px;font-size: 1.2rem;"> at 14. Jan.2021</div>
+												</v-responsive>
 											</v-col>
 
 											<v-btn
-												class="align-self-end"
+												class="align-self-end mt-16"
 												fab
 												outlined
+												color="black"
 												@click="$vuetify.goTo('#about-me')"
 											>
 												<v-icon>mdi-chevron-double-down</v-icon>
@@ -175,16 +172,23 @@
 									at <b>Archangel Michael church in Sheraton</b>
 									<v-btn icon class="mt-n3" @click="open">
 										<v-icon color="red">fas fa-map-marker-alt</v-icon>
-									</v-btn>,
+									</v-btn>
 								</div>
-								We expect you together with your family! We expect your blessing more than anything on
-								our wedding day. Let us all enjoy the holy occasion with your sweet presence. The joy of
-								this wedding is incomplete without your presence in it. You have shared in our lives
+								We invite you together with your family!
+								<br>
+								We expect your blessing more than anything on
+								our wedding day.
+								<br>
+								Let us all enjoy the holy occasion with your sweet presence.
+								<br>
+								The joy of this wedding is incomplete without your presence in it. 
+								<br>
+								You have shared in our lives
 								with your friendship. Let’s share the joy together.
 							</v-responsive>
 
 							<v-img
-								src="./assets/martinAndErinyInvitation.png"
+								src="./assets/updated_invitation.png"
 								hieght="500"
 								width="500"
 								class="mx-auto elevation-24"
@@ -228,10 +232,32 @@
 								<v-divider></v-divider>
 							</v-responsive>
 
-							<v-row no-gutters>
-								<v-col v-for="(src, i) in moments" :key="i" cols="4" md="4">
-									<v-img :src="src"  height="auto" 
-									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 100:400" :class="{'elevation-24': i% 2 == 0}"></v-img>
+							<v-row dense>
+								<v-col  cols="4" md="4">
+									<v-img :src="moments[0].src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 200:500" class="elevation-4 "></v-img>
+								</v-col>
+								<v-col  cols="4" md="4">
+									<v-img :src="moments[1].src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 200:500" class="elevation-24 mt-4"></v-img>
+								</v-col>
+								<v-col  cols="4" md="4">
+									<v-img :src="moments[2].src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 200:600" class="elevation-4"></v-img>
+								</v-col>
+							</v-row>
+							<v-row dense>
+								<v-col  cols="4" md="4">
+									<v-img :src="moments[3].src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 250:600" class="elevation-4"></v-img>
+								</v-col>
+								<v-col  cols="4" md="4">
+									<v-img :src="moments[4].src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ?350:750" style="margin-top:-60%" class="elevation-24"></v-img>
+								</v-col>
+								<v-col  cols="4" md="4">
+									<v-img :src="moments[5].src"  height="auto" 
+									width="100%" :max-height="$vuetify.breakpoint.smAndDown ? 120:480" style="margin-top:-60%" class="elevation-4"></v-img>
 								</v-col>
 							</v-row>
 						</v-container>
@@ -256,6 +282,7 @@
 										src="./assets/f_7.jpeg"  
 										height="auto" 
 										width="100%"
+										:max-height="$vuetify.breakpoint.smAndDown ? 120:400"
 										></v-img>
 									</v-card>
 								</v-col>
@@ -265,7 +292,7 @@
 										src="./assets/f_4.jpeg"  
 										height="auto" 
 										width="100%"
-										min-height="140"
+										:min-height="$vuetify.breakpoint.smAndDown ? 120:400"
 										
 										></v-img>
 									</v-card>
@@ -276,7 +303,7 @@
 										src="./assets/family_all.jpeg"  
 										height="auto" 
 										width="100%"
-										
+										:max-height="$vuetify.breakpoint.smAndDown ? 140:400"
 										></v-img>
 									</v-card>
 								</v-col>
@@ -286,6 +313,7 @@
 										src="./assets/f_8.jpeg"  
 										height="auto" 
 										width="100%"
+										:max-height="$vuetify.breakpoint.smAndDown ? 140:400"
 										
 										
 										></v-img>
@@ -297,7 +325,7 @@
 										src="./assets/f_2.jpeg"  
 										height="auto" 
 										width="100%"
-										
+										:max-height="$vuetify.breakpoint.smAndDown ? 140:400"
 										></v-img>
 									</v-card>
 								</v-col>
@@ -324,33 +352,32 @@
 				data() {
 					return {
 						moments: [
-						    {
-								src:'./assets/1st.jpeg',
+							{
+								src:'./assets/new_5.jpg',
+							},
+              				
+							{
+								src:'./assets/main_4.jpg',
 							},
 							{
-								src:'./assets/old_3.jpeg',
+               					 src:'./assets/new_4.jpg',
 							},
 							{
-								src:'./assets/old_2.jpeg',
-							},
-              				{
-               					 src:'./assets//6th.jpeg',
+               					 src:'./assets/main.jpg',
 							},
 							{
-								src:'./assets/10th.jpeg',
+                				src:'./assets/main_10.jpg',
 							},
-							{
-								src:'./assets/11th.jpeg',
-							},			
-							{
-                				src:'./assets/3rd.jpeg',
-							},
+							
 							{
 								src:'./assets/4th.jpeg',
 							},
 							{
-								src:'./assets//5th.jpeg',
+								src:'./assets/main.jpg',
 							},
+						
+							
+							
              
 						],
 						family: [
